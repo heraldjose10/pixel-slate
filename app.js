@@ -35,6 +35,6 @@ function changeUnitDivColor(e) {
 const containerDiv = document.querySelector('.container')
 
 let verticalUnitsNumber = 80;
-let unitSize = 10;
+let unitSize = 5;
 
 makeDivGrid(verticalUnitsNumber, unitSize);

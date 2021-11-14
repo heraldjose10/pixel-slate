@@ -1,9 +1,20 @@
+/* fonts */
+
+@font-face {
+    font-family: 'Ace Attorney';
+    src: url(fonts/Ace-Attorney.ttf);
+}
+
+
+/* slate styles */
+
 .container {
-    border: 2px black solid;
+    box-shadow: 9px 7px 20px 5px;
     display: flex;
     flex-wrap: wrap;
     margin: 0;
     padding: 0;
+    margin: 30px 0;
 }
 
 .unitDiv {
@@ -13,4 +24,79 @@
 
 .color {
     background-color: aqua;
+}
+
+
+/* -------------------------------- */
+
+body {
+    display: flex;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* width: 70%; */
+    flex: 3;
+}
+
+main h1 {
+    font-family: 'Ace Attorney';
+    font-size: 100px;
+}
+
+
+/* options pane styles */
+
+aside {
+    flex: 1;
+    background-color: thistle;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.input-set {
+    display: flex;
+    align-items: center;
+    width: 80%;
+    justify-content: flex-end;
+    /* padding-right: 10%; */
+}
+
+.input-set p,
+.input-set label {
+    /* flex: 3; */
+    text-align: right;
+    font-size: 30px;
+    font-family: sans-serif;
+    padding: 10px 5px;
+}
+
+.input-set p {
+    margin: 0;
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+}
+
+.input-set input {
+    /* flex: 1; */
+    /* width: 10px; */
+    margin: 0;
+}
+
+
+/* color picker */
+
+.color-picker {
+    width: 13px;
+    height: 13px;
+    background-color: white;
 }
