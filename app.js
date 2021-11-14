@@ -29,8 +29,9 @@ function setContainerSize(containerDivSide) {
 
 
 function changeUnitDivColor(e) {
-    e.target.classList.add('color');
+    e.target.style.backgroundColor = unitDivColor;
 }
+
 
 const containerDiv = document.querySelector('.container')
 
