@@ -73,6 +73,12 @@ function cleanSlate() {
     });
 }
 
+function changeGridSize() {
+    console.log(this.value);
+    const gridSizePTag = document.querySelector('.slider').querySelector('p');
+    gridSizePTag.textContent = `${this.value}x${this.value}`
+}
+
 
 const containerDiv = document.querySelector('.container')
 
@@ -89,3 +95,6 @@ rainbowModeButton.addEventListener('change', controlRainbowMode);
 
 const clearButton = document.querySelector('.clear-slate');
 clearButton.addEventListener('click', cleanSlate);
+
+const sliderInput = document.querySelector('#grid-size');
+sliderInput.addEventListener('input', changeGridSize);
