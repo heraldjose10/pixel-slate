@@ -15,6 +15,7 @@
     margin: 0;
     padding: 0;
     margin: 30px 0;
+    background-color: white;
 }
 
 .unitDiv {
@@ -107,7 +108,15 @@ aside {
     background-color: black;
 }
 
-button.clear-slate {
+
+/* main buttons */
+
+.buttons {
+    display: flex;
+    gap: 50px;
+}
+
+.buttons button {
     border: black 2px solid;
     background-color: white;
     border-radius: 10px;
@@ -119,11 +128,11 @@ button.clear-slate {
     margin-top: 20px;
 }
 
-button.clear-slate:active {
+.buttons button:active {
     transform: scale(.8);
 }
 
-button.clear-slate:hover {
+.buttons button:hover {
     background-color: thistle;
 }
 

@@ -16,8 +16,11 @@ function makeUnitDiv() {
     const unitDiv = document.createElement('div');
 
     unitDiv.classList.add('unitDiv');
+
+    unitDiv.setAttribute('style', `width:${unitSize}px;height:${unitSize}px;background-color:white`);
+    // unitDiv.setAttribute('style',);
+
     unitDiv.addEventListener('mouseover', changeUnitDivColor);
-    unitDiv.setAttribute('style', `width:${unitSize}px;height:${unitSize}px`);
 
     containerDiv.appendChild(unitDiv);
 }
@@ -84,10 +87,22 @@ function changeGridSize() {
     makeDivGrid(verticalUnitsNumber);
 }
 
+function saveContainer() {
+
+    const divToCapture = document.querySelector('#download');
+
+    html2canvas(divToCapture).then((canvas) => {
+        let link = document.createElement('a');
+        link.download = 'filename.png';
+        link.href = canvas.toDataURL('image/png', 0.9);
+        link.click();
+    });
+}
+
 
 const containerDiv = document.querySelector('.container')
 
-let verticalUnitsNumber = 80;
+let verticalUnitsNumber = 20;
 
 makeDivGrid(verticalUnitsNumber);
 
@@ -102,3 +117,6 @@ clearButton.addEventListener('click', cleanSlate);
 
 const sliderInput = document.querySelector('#grid-size');
 sliderInput.addEventListener('input', changeGridSize);
+
+const saveButton = document.querySelector('.save');
+saveButton.addEventListener('click', saveContainer);

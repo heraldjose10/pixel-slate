@@ -9,7 +9,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/themes/classic.min.css" />
 
     <link rel="stylesheet" href="styles.css">
-
+    <script src="html2canvas.js" defer></script>
     <script src="app.js" defer></script>
 
     <title>Pixel-Slate</title>
@@ -18,10 +18,14 @@
 <body>
     <main>
         <h1>Pixel Slate</h1>
-        <div class="container">
+        <div class="container" id="download">
 
         </div>
-        <button class="clear-slate">Clear Slate</button>
+        <div class="buttons">
+            <button class="clear-slate">Clear Slate</button>
+            <button class="save">Download</button>
+        </div>
+
     </main>
     <aside>
         <div class="options">
@@ -41,8 +45,8 @@
             </div>
         </div>
         <div class="slider">
-            <input type="range" name="grid-size" id="grid-size" min="16" max="80" step="4" value="64">
-            <p>64x64</p>
+            <input type="range" name="grid-size" id="grid-size" min="8" max="64" step="4" value="20">
+            <p>20x20</p>
         </div>
     </aside>
     <script src="https://cdn.jsdelivr.net/npm/@simonwep/pickr/dist/pickr.min.js"></script>
