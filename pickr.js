@@ -1,7 +1,11 @@
+let pickedColor = 'black';
+let previousPicked = '';
+let rainbowModeOn = false;
+
 const pickr = Pickr.create({
     el: '.color-picker',
     theme: 'classic', // or 'monolith', or 'nano'
-    default: '#ffffff',
+    default: pickedColor,
 
     swatches: [
         'rgba(244, 67, 54, 1)',
@@ -32,7 +36,7 @@ const pickr = Pickr.create({
         }
     }
 });
-let unitDivColor = 'black';
+
 pickr.on('change', (color) => {
-    unitDivColor = color.toRGBA().toString();
+    pickedColor = color.toRGBA().toString();
 });

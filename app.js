@@ -29,9 +29,34 @@ function setContainerSize(containerDivSide) {
 
 
 function changeUnitDivColor(e) {
-    e.target.style.backgroundColor = unitDivColor;
+    if (rainbowModeOn) {
+        const rainbowColors = ['blue', 'green', 'red', 'yellow', 'pink'];
+        let randomNumber = getRandomNumber(rainbowColors.length)
+        e.target.style.backgroundColor = rainbowColors[randomNumber];
+    }
+    else {
+        e.target.style.backgroundColor = pickedColor;
+    }
+
 }
 
+function getRandomNumber(upperLimit) {
+    return Math.floor(Math.random() * upperLimit);
+}
+
+function eraseModeOn(e) {
+    if (this.checked) {
+        previousPicked = pickedColor;
+        pickedColor = 'white';
+    }
+    else {
+        pickedColor = previousPicked;
+    }
+}
+
+function controlRainbowMode(e) {
+    (this.checked) ? rainbowModeOn = true : rainbowModeOn = false;
+}
 
 const containerDiv = document.querySelector('.container')
 
@@ -39,3 +64,9 @@ let verticalUnitsNumber = 80;
 let unitSize = 5;
 
 makeDivGrid(verticalUnitsNumber, unitSize);
+
+const eraserButton = document.querySelector('#erase-mode');
+eraserButton.addEventListener('change', eraseModeOn);
+
+const rainbowModeButton = document.querySelector('#rainbow-mode');
+rainbowModeButton.addEventListener('change', controlRainbowMode);

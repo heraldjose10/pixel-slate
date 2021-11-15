@@ -86,8 +86,24 @@ aside {
     /* justify-content: flex-end; */
 }
 
+
+/* custom checkbox */
+
 .input-set input {
     /* flex: 1; */
-    width: 26px;
-    margin: 0;
+    height: 26.656px;
+    width: 26.656px;
+    opacity: 0;
+    position: absolute;
+}
+
+.input-set .custom-check {
+    height: 26.656px;
+    width: 26.656px;
+    background-color: white;
+    border-radius: .15em;
+}
+
+.input-set input:checked~.custom-check {
+    background-color: black;
 }
