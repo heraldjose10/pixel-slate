@@ -22,10 +22,6 @@
     margin: 0;
 }
 
-.color {
-    background-color: aqua;
-}
-
 
 /* -------------------------------- */
 
@@ -106,4 +102,24 @@ aside {
 
 .input-set input:checked~.custom-check {
     background-color: black;
+}
+
+button.clear-slate {
+    border: black 2px solid;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 9px 7px 20px 5px;
+    color: black;
+    font-family: sans-serif;
+    font-size: 25px;
+    padding: 10px 5px;
+    margin-top: 20px;
+}
+
+button.clear-slate:active {
+    transform: scale(.8);
+}
+
+button.clear-slate:hover {
+    background-color: thistle;
 }

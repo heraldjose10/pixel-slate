@@ -37,6 +37,7 @@ const pickr = Pickr.create({
     }
 });
 
+
 pickr.on('change', (color) => {
     pickedColor = color.toRGBA().toString();
 });

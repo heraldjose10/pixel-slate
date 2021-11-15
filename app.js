@@ -29,34 +29,50 @@ function setContainerSize(containerDivSide) {
 
 
 function changeUnitDivColor(e) {
+
     if (rainbowModeOn) {
         const rainbowColors = ['blue', 'green', 'red', 'yellow', 'pink'];
         let randomNumber = getRandomNumber(rainbowColors.length)
         e.target.style.backgroundColor = rainbowColors[randomNumber];
     }
+
     else {
         e.target.style.backgroundColor = pickedColor;
     }
 
 }
 
+
 function getRandomNumber(upperLimit) {
     return Math.floor(Math.random() * upperLimit);
 }
 
-function eraseModeOn(e) {
+
+function eraseModeOn() {
+
     if (this.checked) {
         previousPicked = pickedColor;
         pickedColor = 'white';
     }
+
     else {
         pickedColor = previousPicked;
     }
 }
 
-function controlRainbowMode(e) {
+
+function controlRainbowMode() {
     (this.checked) ? rainbowModeOn = true : rainbowModeOn = false;
 }
+
+
+function cleanSlate() {
+    const unitDivsList = document.querySelectorAll('.unitDiv');
+    unitDivsList.forEach(div => {
+        div.style.backgroundColor = 'white';
+    });
+}
+
 
 const containerDiv = document.querySelector('.container')
 
@@ -70,3 +86,6 @@ eraserButton.addEventListener('change', eraseModeOn);
 
 const rainbowModeButton = document.querySelector('#rainbow-mode');
 rainbowModeButton.addEventListener('change', controlRainbowMode);
+
+const clearButton = document.querySelector('.clear-slate');
+clearButton.addEventListener('click', cleanSlate);
