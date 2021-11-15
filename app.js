@@ -1,7 +1,8 @@
-function makeDivGrid(verticalNumber, unitSize) {
+function makeDivGrid(verticalNumber) {
 
     let numberOfDivs = verticalNumber ** 2;
-    let containerDivSide = verticalNumber * unitSize;
+    let containerDivSide = 480;
+    unitSize = containerDivSide / verticalNumber;
 
     setContainerSize(containerDivSide);
 
@@ -23,8 +24,8 @@ function makeUnitDiv() {
 
 
 function setContainerSize(containerDivSide) {
-    containerDiv.style.maxHeight = `${containerDivSide}px`
-    containerDiv.style.maxWidth = `${containerDivSide}px`
+    containerDiv.style.height = `${containerDivSide}px`
+    containerDiv.style.width = `${containerDivSide}px`
 }
 
 
@@ -74,18 +75,21 @@ function cleanSlate() {
 }
 
 function changeGridSize() {
-    console.log(this.value);
+
     const gridSizePTag = document.querySelector('.slider').querySelector('p');
-    gridSizePTag.textContent = `${this.value}x${this.value}`
+    gridSizePTag.textContent = `${this.value}x${this.value}`;
+    verticalUnitsNumber = this.value;
+
+    containerDiv.textContent = '';
+    makeDivGrid(verticalUnitsNumber);
 }
 
 
 const containerDiv = document.querySelector('.container')
 
 let verticalUnitsNumber = 80;
-let unitSize = 5;
 
-makeDivGrid(verticalUnitsNumber, unitSize);
+makeDivGrid(verticalUnitsNumber);
 
 const eraserButton = document.querySelector('#erase-mode');
 eraserButton.addEventListener('change', eraseModeOn);
